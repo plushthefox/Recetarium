@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name" translatable="false">Recetarium</string>
+    <string name="add_recipe" translatable="true">Add recipe</string>
 </resources>

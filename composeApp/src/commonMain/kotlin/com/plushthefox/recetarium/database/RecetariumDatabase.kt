@@ -9,4 +9,5 @@ import com.plushthefox.recetarium.model.Step
 
 @Database(entities = [Recipe::class, Ingredient::class, RecipeIngredient::class, Step::class], version = 1)
 abstract class RecetariumDatabase: RoomDatabase() {
+    abstract fun recipeDao(): RecipeDao
 }

@@ -1,58 +1,70 @@
 package com.plushthefox.recetarium.theme
 
+import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
-import androidx.compose.ui.text.font.FontWeight
-import recetarium.composeapp.generated.resources.Res
-import recetarium.composeapp.generated.resources.roboto_bold
-import recetarium.composeapp.generated.resources.roboto_regular
-import recetarium.composeapp.generated.resources.roboto_variable
-import androidx.compose.material3.Typography
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.Font
+import recetarium.composeapp.generated.resources.Res
+import recetarium.composeapp.generated.resources.montagu_slab_variable
+import recetarium.composeapp.generated.resources.roboto_variable
 
 object BodyMediumVFConfig {
     const val WEIGHT = 400
-    const val WIDTH = 100f
 }
 
 object HeadlineLargeVFConfig {
-    const val WEIGHT = 700
-    const val WIDTH = 100f
-
+    const val WEIGHT = 600
 }
 
+object HeadlineMediumVFConfig {
+    const val WEIGHT = 500
+}
+
+
 @Composable
-fun AppTypography(): Typography {
+fun appTypography(): Typography {
     val bodyMediumFamily = FontFamily(
         Font(
             Res.font.roboto_variable,
             variationSettings = FontVariation.Settings(
                 FontVariation.weight(BodyMediumVFConfig.WEIGHT),
-                FontVariation.width(BodyMediumVFConfig.WIDTH),
             )
         )
     )
     val headlineLargeFamily = FontFamily(
         Font(
-            Res.font.roboto_variable,
+            Res.font.montagu_slab_variable,
             variationSettings = FontVariation.Settings(
                 FontVariation.weight(HeadlineLargeVFConfig.WEIGHT),
-                FontVariation.width(HeadlineLargeVFConfig.WIDTH)
+            )
+        )
+    )
+    val headlineMediumFamily = FontFamily(
+        Font(
+            resource = Res.font.montagu_slab_variable,
+            variationSettings = FontVariation.Settings(
+                FontVariation.weight(HeadlineMediumVFConfig.WEIGHT),
             )
         )
     )
     return Typography(
         headlineLarge = TextStyle(
             fontFamily = headlineLargeFamily,
-            fontSize = 28.sp,
+            fontSize = 32.sp
 
-            ),
+        ),
+        headlineMedium = TextStyle(
+            fontFamily = headlineMediumFamily,
+            fontSize = 24.sp
+        ),
         bodyMedium = TextStyle(
             fontFamily = bodyMediumFamily,
-            fontSize = 14.sp,
+            fontSize = 16.sp
+
         ),
+
     )
 }
