@@ -12,7 +12,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHost
+import androidx.navigation.compose.rememberNavController
 import com.plushthefox.recetarium.model.Recipe
+import com.plushthefox.recetarium.navigation.RecetariumNavHost
 import com.plushthefox.recetarium.theme.AppTheme
 import com.plushthefox.recetarium.view.RecetariumToolbar
 import com.plushthefox.recetarium.view.RecipeCard
@@ -27,37 +30,8 @@ import recetarium.composeapp.generated.resources.add_recipe
 fun App() {
 
     AppTheme {
+        val navController = rememberNavController()
         var showContent by remember { mutableStateOf(false) }
-        Scaffold(
-            topBar = { RecetariumToolbar() },
-            floatingActionButton = {
-                FloatingActionButton(
-                    onClick = {},
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onPrimary
-                ) {
-                    Icon(
-                        painter = painterResource(Res.drawable.add_48px),
-                        contentDescription = stringResource(Res.string.add_recipe)
-                    )
-                }
-            },
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.primaryContainer),
-            contentWindowInsets = WindowInsets.safeDrawing,
-
-            ) { innerPadding ->
-            LazyColumn(
-                modifier = Modifier.padding(
-                    top = innerPadding.calculateTopPadding(),
-                    start = 8.dp,
-                    end = 8.dp
-
-                )
-            ) {
-            }
-
-        }
+        RecetariumNavHost(navController, Modifier)
     }
 }

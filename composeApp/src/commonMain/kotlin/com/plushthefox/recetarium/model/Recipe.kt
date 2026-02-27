@@ -13,7 +13,8 @@ import androidx.room.PrimaryKey
  */
 @Entity
 data class Recipe(
-    @PrimaryKey(autoGenerate = true) val recipeId: Long = 0,
+    @PrimaryKey(autoGenerate = true)
+    val recipeId: Long = 0,
     val name: String = "",
     val description: String = "",
     val estimatedTime: Long = 0

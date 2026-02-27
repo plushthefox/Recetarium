@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="add_recipe" translatable="true">Añadir receta</string>
+    <string name="open_navigation_menu" translatable="true">Abrir menú de navegación</string>
 </resources>
