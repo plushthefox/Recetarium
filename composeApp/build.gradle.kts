@@ -52,8 +52,12 @@ kotlin {
             implementation(libs.ui.tooling.preview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            // Room
             implementation(libs.androidx.room.runtime)
             implementation(libs.androidx.sqlite.bundled)
+
+            // Navigation
             implementation(libs.navigation.compose)
         }
         commonTest.dependencies {
@@ -70,6 +74,14 @@ kotlin {
 
 dependencies {
     androidRuntimeClasspath(libs.ui.tooling)
+    listOf(
+        "kspAndroid",
+        "kspIosSimulatorArm64",
+        "kspIosArm64",
+        "kspJvm"
+    ).forEach {
+        add(it, libs.androidx.room.compiler)
+    }
 }
 
 compose.desktop {
