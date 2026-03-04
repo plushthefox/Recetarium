@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
  * @property description A brief description of the recipe
  * @property estimatedTime How long it is estimated to take in seconds
  */
-@Entity
+@Entity(tableName = "recipes")
 data class Recipe(
     @PrimaryKey(autoGenerate = true)
     val recipeId: Long = 0,

@@ -19,6 +19,7 @@ kotlin {
         implementation(projects.composeApp)
         implementation(libs.ui.tooling.preview)
         implementation(libs.androidx.activity.compose)
+        implementation(libs.androidx.room.runtime)
         implementation(libs.androidx.room.sqliteWrapper)
     }
 }
