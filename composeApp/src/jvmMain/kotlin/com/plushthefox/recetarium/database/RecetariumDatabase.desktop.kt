@@ -11,5 +11,3 @@ fun getDatabaseBuilder(): RoomDatabase.Builder<RecetariumDatabase> {
         name = dbFile.absolutePath
     )
 }
-
-actual fun databaseBuilder(): RoomDatabase.Builder<RecetariumDatabase> = getDatabaseBuilder()

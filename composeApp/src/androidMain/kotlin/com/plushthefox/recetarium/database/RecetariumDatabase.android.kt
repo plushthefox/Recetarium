@@ -1,6 +1,5 @@
 package com.plushthefox.recetarium.database
 
-import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -14,5 +13,3 @@ fun getDatabaseBuilder(context: Context): RoomDatabase.Builder<RecetariumDatabas
         name = dbFile.absolutePath
     )
 }
-
-actual fun databaseBuilder(): RoomDatabase.Builder<RecetariumDatabase> = getDatabaseBuilder()

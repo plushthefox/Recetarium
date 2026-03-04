@@ -25,5 +25,3 @@ private fun documentDirectory(): String {
     )
     return requireNotNull(documentDirectory?.path)
 }
-
-actual fun databaseBuilder(): RoomDatabase.Builder<RecetariumDatabase> = getDatabaseBuilder()
