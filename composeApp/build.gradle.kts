@@ -59,6 +59,7 @@ kotlin {
 
             // Navigation
             implementation(libs.navigation.compose)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -82,6 +83,7 @@ dependencies {
     ).forEach {
         add(it, libs.androidx.room.compiler)
     }
+
 }
 
 compose.desktop {
