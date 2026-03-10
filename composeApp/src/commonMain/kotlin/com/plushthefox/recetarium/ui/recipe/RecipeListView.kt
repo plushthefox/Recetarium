@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.plushthefox.recetarium.ui.AppViewModelProvider
 import org.jetbrains.compose.resources.painterResource
 import recetarium.composeapp.generated.resources.Res
 import recetarium.composeapp.generated.resources.menu_24px
@@ -15,7 +14,7 @@ import recetarium.composeapp.generated.resources.menu_24px
 
 @Composable
 fun RecipeListView(
-    viewModel: RecipeListViewModel = viewModel(factory = AppViewModelProvider.Factory),
+    viewModel: RecipeListViewModel,
     onRecipeClick: (Int) -> Unit,
     onAddRecipeClick: () -> Unit,
     onSearchRecipeClick: () -> Unit

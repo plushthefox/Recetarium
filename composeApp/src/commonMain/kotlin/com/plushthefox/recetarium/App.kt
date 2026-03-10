@@ -1,26 +1,38 @@
 package com.plushthefox.recetarium
 
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.room.RoomDatabase
-import com.plushthefox.recetarium.database.RecetariumDatabase
-import com.plushthefox.recetarium.database.getRoomDatabase
-import com.plushthefox.recetarium.navigation.RecetariumNavHost
+import com.plushthefox.recetarium.data.repositories.OfflineRecipesRepository
+import com.plushthefox.recetarium.data.RecetariumDatabase
+import com.plushthefox.recetarium.navigation.RecipeList
 import com.plushthefox.recetarium.theme.AppTheme
+import com.plushthefox.recetarium.ui.recipe.RecipeListView
+import com.plushthefox.recetarium.ui.recipe.RecipeListViewModel
 
 
 @Composable
 fun App(
-    databaseBuilder: RoomDatabase.Builder<RecetariumDatabase>
+    database: RecetariumDatabase
 ) {
 
     AppTheme {
-        val database = getRoomDatabase(databaseBuilder)
+
         val navController = rememberNavController()
         var showContent by remember { mutableStateOf(false) }
-        RecetariumNavHost(navController, Modifier)
+
+        NavHost(navController = navController, startDestination = RecipeList.route) {
+            composable(route = RecipeList.route) {
+                val recipeListViewModel = RecipeListViewModel(OfflineRecipesRepository(database.recipeDao()))
+                RecipeListView(
+                    viewModel = recipeListViewModel,
+                    onRecipeClick = { },
+                    onAddRecipeClick = { },
+                    onSearchRecipeClick = { }
+                )
+            }
+        }
     }
 
 

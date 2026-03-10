@@ -19,8 +19,8 @@ room = "2.8.4"
 sqlite = "2.6.2"
 ksp = "2.3.3"
 navigationCompose = "2.9.2"
-koin-bom = "4.2.0"
 metro = "0.11.2"
+koin-bom = "4.1.1"  # Stable version
 
 
 [libraries]
@@ -53,17 +53,6 @@ androidx-room-sqliteWrapper = { module = "androidx.room:room-sqlite-wrapper", ve
 # Navigation
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 
-# Koin
-koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
-koin-core = { module = "io.insert-koin:koin-core" }
-koin-android = { module = "io.insert-koin:koin-android" }
-koin-compose = { module = "io.insert-koin:koin-compose" }
-koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel" }
-koin-compose-navigation = { module = "io.insert-koin:koin-compose-navigation3" }
-koin-ktor = { module = "io.insert-koin:koin-ktor" }
-koin-test = { module = "io.insert-koin:koin-test" }
-
-
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -76,4 +65,3 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 androidx-room = { id = "androidx.room", version.ref = "room" }
-metro = {id="dev.zacsweers.metro", version.ref = "metro"}

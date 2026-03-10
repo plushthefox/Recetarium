@@ -1,4 +1,4 @@
-package com.plushthefox.recetarium.model
+package com.plushthefox.recetarium.data.entities
 
 import androidx.room.Entity
 

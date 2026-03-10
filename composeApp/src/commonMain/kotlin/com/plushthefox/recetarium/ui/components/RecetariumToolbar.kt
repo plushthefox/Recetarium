@@ -1,4 +1,4 @@
-package com.plushthefox.recetarium.view
+package com.plushthefox.recetarium.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.*

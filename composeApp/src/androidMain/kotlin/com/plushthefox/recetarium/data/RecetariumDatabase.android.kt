@@ -1,8 +1,9 @@
-package com.plushthefox.recetarium.database
+package com.plushthefox.recetarium.data
 
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.plushthefox.recetarium.data.RecetariumDatabase
 
 
 fun getDatabaseBuilder(context: Context): RoomDatabase.Builder<RecetariumDatabase> {

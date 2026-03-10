@@ -1,4 +1,4 @@
-package com.plushthefox.recetarium.database
+package com.plushthefox.recetarium.data
 
 import androidx.room.Room
 import androidx.room.RoomDatabase

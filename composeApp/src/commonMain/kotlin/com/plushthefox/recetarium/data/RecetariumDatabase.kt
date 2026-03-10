@@ -1,4 +1,4 @@
-package com.plushthefox.recetarium.database
+package com.plushthefox.recetarium.data
 
 import androidx.room.ConstructedBy
 import androidx.room.Database
@@ -6,10 +6,10 @@ import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import com.plushthefox.recetarium.data.dao.RecipeDao
-import com.plushthefox.recetarium.model.Ingredient
-import com.plushthefox.recetarium.model.Recipe
-import com.plushthefox.recetarium.model.RecipeIngredient
-import com.plushthefox.recetarium.model.Step
+import com.plushthefox.recetarium.data.entities.Ingredient
+import com.plushthefox.recetarium.data.entities.Recipe
+import com.plushthefox.recetarium.data.entities.RecipeIngredient
+import com.plushthefox.recetarium.data.entities.Step
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 
@@ -21,12 +21,11 @@ abstract class RecetariumDatabase: RoomDatabase() {
 
 }
 
-@Suppress("KotlinNoActualForExpect")
+@Suppress("KotlinNoActualForExpect", "EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object RecetariumDatabaseConstructor : RoomDatabaseConstructor<RecetariumDatabase> {
     override fun initialize(): RecetariumDatabase
 }
 
-// TODO: Per platform database implementation
 fun getRoomDatabase(
     builder: RoomDatabase.Builder<RecetariumDatabase>
 ): RecetariumDatabase {
@@ -35,3 +34,4 @@ fun getRoomDatabase(
         .setQueryCoroutineContext(Dispatchers.IO)
         .build()
 }
+
